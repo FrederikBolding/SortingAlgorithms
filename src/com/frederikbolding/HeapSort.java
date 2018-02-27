@@ -17,7 +17,7 @@ public class HeapSort {
     }
 
     private static void BuildMaxHeap(int[] A) {
-        for (int i = (A.length / 2); i >= 0; i--) {
+        for (int i = (A.length / 2); i > 0; i--) {
             MaxHeapify(A, i, A.length);
         }
     }
@@ -41,11 +41,11 @@ public class HeapSort {
     }
 
     private static int GetLeft(int i) {
-        return 2 * i;
+        return (2 * i) + 1;
     }
 
     private static int GetRight(int i) {
-        return (2 * i) + 1;
+        return (2 * i) + 2;
     }
 
 }
