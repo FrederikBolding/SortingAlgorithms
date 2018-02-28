@@ -11,9 +11,11 @@ public class Main {
         Main.visualization = visualization;
         //InsertionSort.Main(GeneratePermutation(200).stream().mapToInt(i->i).toArray());
         //BogoSort.Main(GeneratePermutation(8).stream().mapToInt(i->i).toArray());
-        //Quicksort.Main(GeneratePermutation(200).stream().mapToInt(i->i).toArray());
+        //Quicksort.Quicksort(GeneratePermutation(200).stream().mapToInt(i->i).toArray());
+        Quicksort.Quicksort3Way(GeneratePermutation(400).stream().mapToInt(i->i).toArray());
         //MergeSort.MergeSortArrayRecursive(GeneratePermutation(400).stream().mapToInt(i -> i).toArray());
-        HeapSort.HeapSort(GeneratePermutation(400).stream().mapToInt(i -> i).toArray());
+        //HeapSort.HeapSort(GeneratePermutation(400).stream().mapToInt(i -> i).toArray());
+        //CountingSort.CountingSort(GeneratePermutation(400).stream().mapToInt(i -> i).toArray());
     }
 
     private static ArrayList<Integer> GeneratePermutation(int n) {
