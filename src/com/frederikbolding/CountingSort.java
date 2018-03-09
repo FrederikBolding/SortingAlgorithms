@@ -2,10 +2,13 @@ package com.frederikbolding;
 
 import java.util.Arrays;
 
-public class CountingSort {
+public class CountingSort extends BaseAlgorithm {
 
-    public static void CountingSort(int[] A) {
-        System.out.println(Arrays.toString(A));
+    public CountingSort(int elements) {
+        super(elements);
+    }
+
+    public int[] Sort(int[] A) {
         int k = Arrays.stream(A).max().getAsInt();
         int[] B = A.clone();
         Main.visualization.Visualize(B);
@@ -22,7 +25,7 @@ public class CountingSort {
             C[A[j]]--;
         }
         Main.visualization.Visualize(B);
-        System.out.println(Arrays.toString(B));
+        return B;
     }
 
 }

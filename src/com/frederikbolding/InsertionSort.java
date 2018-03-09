@@ -1,13 +1,16 @@
 package com.frederikbolding;
 
-import java.util.Arrays;
+public class InsertionSort extends BaseAlgorithm {
 
-public class InsertionSort {
-    public static void Main(int[] A) {
+    public InsertionSort(int elements) {
+        super(elements);
+    }
+
+    public int[] Sort(int[] A) {
         Main.visualization.Visualize(A);
         InsertionSort(A);
         Main.visualization.Visualize(A);
-        System.out.println(Arrays.toString(A));
+        return A;
     }
 
     public static void InsertionSort(int[] A) {

@@ -1,29 +1,23 @@
 package com.frederikbolding;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class Main {
 
     public static AlgorithmVisualization visualization;
 
     public static void Run(AlgorithmVisualization visualization) {
         Main.visualization = visualization;
-        //InsertionSort.Main(GeneratePermutation(200).stream().mapToInt(i->i).toArray());
-        //BogoSort.Main(GeneratePermutation(8).stream().mapToInt(i->i).toArray());
-        //Quicksort.Quicksort(GeneratePermutation(200).stream().mapToInt(i->i).toArray());
-        Quicksort.Quicksort3Way(GeneratePermutation(400).stream().mapToInt(i->i).toArray());
-        //MergeSort.MergeSortArrayRecursive(GeneratePermutation(400).stream().mapToInt(i -> i).toArray());
-        //HeapSort.HeapSort(GeneratePermutation(400).stream().mapToInt(i -> i).toArray());
-        //CountingSort.CountingSort(GeneratePermutation(400).stream().mapToInt(i -> i).toArray());
+        RunAlgorithm(new InsertionSort(400));
+        RunAlgorithm(new QuickSort(400));
+        RunAlgorithm(new QuickSort3Way(400));
+        RunAlgorithm(new MergeSort(400));
+        RunAlgorithm(new HeapSort(400));
+        RunAlgorithm(new CountingSort(400));
+        RunAlgorithm(new BogoSort(8));
     }
 
-    private static ArrayList<Integer> GeneratePermutation(int n) {
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            list.add(i);
-        }
-        Collections.shuffle(list);
-        return list;
+    private static void RunAlgorithm(BaseAlgorithm algorithm) {
+        long start = System.currentTimeMillis();
+        algorithm.RunSort();
+        System.out.println("Execution took: " + (System.currentTimeMillis() - start) + " ms.");
     }
 }

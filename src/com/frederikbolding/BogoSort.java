@@ -1,19 +1,20 @@
 package com.frederikbolding;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 
-public class BogoSort {
+public class BogoSort extends BaseAlgorithm {
 
     private static Random random;
 
-    public static void Main(int[] A) {
+    public BogoSort(int elements) {
+        super(elements);
+    }
+
+    public int[] Sort(int[] A) {
         Main.visualization.Visualize(A);
         BogoSort(A);
         Main.visualization.Visualize(A);
-        System.out.println(Arrays.toString(A));
+        return A;
     }
 
     private static boolean IsSorted(int[] A) {

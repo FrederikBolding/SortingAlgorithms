@@ -1,23 +1,24 @@
 package com.frederikbolding;
 
-import java.util.Arrays;
+public class HeapSort extends BaseAlgorithm {
 
-public class HeapSort {
+    public HeapSort(int elements) {
+        super(elements);
+    }
 
-    public static void HeapSort(int[] A) {
-        System.out.println(Arrays.toString(A));
+    public int[] Sort(int[] A) {
         BuildMaxHeap(A);
-        for (int i = A.length - 1; i > 1; i--) {
+        for (int i = A.length - 1; i > 0; i--) {
             Main.visualization.Visualize(A);
             Util.Swap(A, 0, i);
-            MaxHeapify(A, 0, i - 1);
+            MaxHeapify(A, 0, i);
             Main.visualization.Visualize(A);
         }
-        System.out.println(Arrays.toString(A));
+        return A;
     }
 
     private static void BuildMaxHeap(int[] A) {
-        for (int i = (A.length / 2); i > 0; i--) {
+        for (int i = (A.length / 2); i >= 0; i--) {
             MaxHeapify(A, i, A.length);
         }
     }

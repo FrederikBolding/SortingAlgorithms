@@ -24,6 +24,18 @@ public class AlgorithmVisualization extends Application {
     private static final int APP_H = 600;
     private static ImageView view;
 
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.setScene(new Scene(createContent()));
+        stage.show();
+
+        Thread thread = new Thread(() -> {
+            new Main().Run(this);
+        });
+
+        thread.start();
+    }
+
     private Parent createContent() {
         Image image = makeMockImage();
         byte[] imageData = imageToData(image);
@@ -136,20 +148,6 @@ public class AlgorithmVisualization extends Application {
         }
 
         return image;
-    }
-
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(createContent()));
-        stage.show();
-
-        Thread thread = new Thread(() -> {
-            new Main().Run(this);
-        });
-
-        thread.start();
-
     }
 
 }

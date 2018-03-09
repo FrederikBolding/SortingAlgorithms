@@ -1,19 +1,18 @@
 package com.frederikbolding;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class MergeSort {
-    /**
-     * public static void Main(List<Integer> A) {
-     * System.out.println(A);
-     * A = MergeSortRecursive(A);
-     * System.out.println(A);
-     * }
-     **/
+public class MergeSort extends BaseAlgorithm {
 
+    public MergeSort(int elements) {
+        super(elements);
+    }
+
+    public int[] Sort(int[] A) {
+        MergeSortArrayRecursive(A);
+        return A;
+    }
 
     public static List<Integer> MergeSortListRecursive(List<Integer> A) {
 
