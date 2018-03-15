@@ -23,6 +23,7 @@ public class BaseAlgorithm implements Algorithm {
 
 
     public void RunSort() {
+        Main.visualization.SetTitle(this.getClass().getSimpleName());
         System.out.println("Running " + this.getClass().getSimpleName());
         System.out.println(Arrays.toString(A));
         A = Sort(A);

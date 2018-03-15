@@ -15,25 +15,32 @@ import javafx.stage.Stage;
 
 import java.nio.ByteBuffer;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class AlgorithmVisualization extends Application {
 
     private static final int APP_W = 800;
     private static final int APP_H = 600;
-    private static ImageView view;
+    private ImageView view;
+    private Stage stage;
 
     @Override
     public void start(Stage stage) throws Exception {
         stage.setScene(new Scene(createContent()));
         stage.show();
 
+        this.stage = stage;
+
         Thread thread = new Thread(() -> {
             new Main().Run(this);
         });
 
         thread.start();
+    }
+
+    public void SetTitle(String title) {
+        Platform.runLater(() -> {
+            stage.setTitle(title);
+        });
     }
 
     private Parent createContent() {
