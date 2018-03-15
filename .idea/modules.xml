@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SortingAlgorithms.iml" filepath="$PROJECT_DIR$/SortingAlgorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SortingAlgorithms.iml" filepath="$PROJECT_DIR$/.idea/modules/SortingAlgorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SortingAlgorithms_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SortingAlgorithms_main.iml" group="SortingAlgorithms" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SortingAlgorithms_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SortingAlgorithms_test.iml" group="SortingAlgorithms" />
     </modules>
   </component>
 </project>

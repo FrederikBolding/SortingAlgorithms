@@ -1,5 +1,3 @@
-package com.frederikbolding;
-
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
@@ -12,7 +10,6 @@ interface Algorithm {
 
 public class BaseAlgorithm implements Algorithm {
 
-
     private int elements;
     private int[] A;
 
@@ -21,13 +18,22 @@ public class BaseAlgorithm implements Algorithm {
         A = GeneratePermutation(elements).stream().mapToInt(i -> i).toArray();
     }
 
+    public static void Visualize(int[] A) {
+        if (Main.visualization != null) {
+            Main.visualization.Visualize(A);
+        }
+    }
 
     public void RunSort() {
-        Main.visualization.SetTitle(this.getClass().getSimpleName());
+        if (Main.visualization != null) {
+            Main.visualization.SetTitle(this.getClass().getSimpleName());
+        }
         System.out.println("Running " + this.getClass().getSimpleName());
         System.out.println(Arrays.toString(A));
         A = Sort(A);
         System.out.println(Arrays.toString(A));
+        boolean sorted = Util.IsSorted(A);
+        assert sorted;
     }
 
     public int[] Sort(int[] A) {

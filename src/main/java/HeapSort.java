@@ -1,5 +1,3 @@
-package com.frederikbolding;
-
 public class HeapSort extends BaseAlgorithm {
 
     public HeapSort(int elements) {
@@ -9,10 +7,10 @@ public class HeapSort extends BaseAlgorithm {
     public int[] Sort(int[] A) {
         BuildMaxHeap(A);
         for (int i = A.length - 1; i > 0; i--) {
-            Main.visualization.Visualize(A);
+            Visualize(A);
             Util.Swap(A, 0, i);
             MaxHeapify(A, 0, i);
-            Main.visualization.Visualize(A);
+            Visualize(A);
         }
         return A;
     }

@@ -1,5 +1,3 @@
-package com.frederikbolding;
-
 import java.util.Arrays;
 
 public class RadixSort extends BaseAlgorithm {
@@ -8,11 +6,11 @@ public class RadixSort extends BaseAlgorithm {
     }
 
     public int[] Sort(int[] A) {
-        Main.visualization.Visualize(A);
+        Visualize(A);
         int max = Arrays.stream(A).max().getAsInt();
         for (int exp = 1; max / exp > 0; exp *= 10) {
             A = CountingSort(A, exp);
-            Main.visualization.Visualize(A);
+            Visualize(A);
         }
         return A;
     }
@@ -21,7 +19,6 @@ public class RadixSort extends BaseAlgorithm {
     public int[] CountingSort(int[] A, int exp) {
         int k = Arrays.stream(A).max().getAsInt();
         int[] B = A.clone();
-        Main.visualization.Visualize(B);
         int[] C = new int[A.length];
         for (int j = 0; j < A.length; j++) {
             C[getIndex(A, j, exp)]++;
@@ -30,11 +27,10 @@ public class RadixSort extends BaseAlgorithm {
             C[i] += C[i - 1];
         }
         for (int j = A.length - 1; j >= 0; j--) {
-            Main.visualization.Visualize(B);
+            Visualize(B);
             B[C[getIndex(A, j, exp)] - 1] = A[j];
             C[getIndex(A, j, exp)]--;
         }
-        Main.visualization.Visualize(B);
         return B;
     }
 

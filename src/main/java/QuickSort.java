@@ -1,5 +1,3 @@
-package com.frederikbolding;
-
 public class QuickSort extends BaseAlgorithm {
 
     public QuickSort(int elements) {
@@ -28,7 +26,7 @@ public class QuickSort extends BaseAlgorithm {
             int q = Partition(A, p, r);
             Quicksort(A, p, q - 1);
             Quicksort(A, q + 1, r);
-            Main.visualization.Visualize(A);
+            Visualize(A);
         }
         return A;
     }

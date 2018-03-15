@@ -1,5 +1,3 @@
-package com.frederikbolding;
-
 import java.util.Random;
 
 public class BogoSort extends BaseAlgorithm {
@@ -11,24 +9,15 @@ public class BogoSort extends BaseAlgorithm {
     }
 
     public int[] Sort(int[] A) {
-        Main.visualization.Visualize(A);
+        Visualize(A);
         BogoSort(A);
-        Main.visualization.Visualize(A);
+        Visualize(A);
         return A;
     }
 
-    private static boolean IsSorted(int[] A) {
-        for (int i = 1; i < A.length; i++) {
-            if (A[i] < A[i - 1]) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     private static void BogoSort(int[] A) {
-        while (!IsSorted(A)) {
-            Main.visualization.Visualize(A);
+        while (!Util.IsSorted(A)) {
+            Visualize(A);
             shuffle(A);
         }
     }

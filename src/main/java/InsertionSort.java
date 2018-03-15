@@ -1,5 +1,3 @@
-package com.frederikbolding;
-
 public class InsertionSort extends BaseAlgorithm {
 
     public InsertionSort(int elements) {
@@ -7,15 +5,15 @@ public class InsertionSort extends BaseAlgorithm {
     }
 
     public int[] Sort(int[] A) {
-        Main.visualization.Visualize(A);
+        Visualize(A);
         InsertionSort(A);
-        Main.visualization.Visualize(A);
+        Visualize(A);
         return A;
     }
 
     public static void InsertionSort(int[] A) {
         for (int j = 1; j < A.length; j++) {
-            Main.visualization.Visualize(A);
+            Visualize(A);
             int key = A[j];
             int i = j - 1;
             while (i >= 0 && A[i] > key) {

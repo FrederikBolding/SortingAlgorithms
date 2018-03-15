@@ -1,5 +1,3 @@
-package com.frederikbolding;
-
 import javafx.util.Pair;
 
 public class QuickSort3Way extends BaseAlgorithm {
@@ -44,7 +42,7 @@ public class QuickSort3Way extends BaseAlgorithm {
             j = tuple.getValue().intValue();
             Quicksort3Way(A, l, i);
             Quicksort3Way(A, j, r);
-            Main.visualization.Visualize(A);
+            Visualize(A);
         }
         return A;
     }

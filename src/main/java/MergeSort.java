@@ -1,5 +1,3 @@
-package com.frederikbolding;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,20 +55,20 @@ public class MergeSort extends BaseAlgorithm {
     }
 
     public static void MergeSortArrayRecursive(int[] A) {
-        Main.visualization.Visualize(A);
+        Visualize(A);
         MergeSortArrayRecursive(A, 0, A.length - 1);
-        Main.visualization.Visualize(A);
+        Visualize(A);
     }
 
     public static void MergeSortArrayRecursive(int[] A, int p, int r) {
         if (p < r) {
-            Main.visualization.Visualize(A);
+            Visualize(A);
             int q = (p + r) / 2;
             MergeSortArrayRecursive(A, p, q);
-            Main.visualization.Visualize(A);
+            Visualize(A);
             MergeSortArrayRecursive(A, q + 1, r);
             MergeArray(A, p, q, r);
-            Main.visualization.Visualize(A);
+            Visualize(A);
         }
     }
 

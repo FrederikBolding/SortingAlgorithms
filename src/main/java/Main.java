@@ -1,5 +1,3 @@
-package com.frederikbolding;
-
 public class Main {
 
     public static AlgorithmVisualization visualization;
