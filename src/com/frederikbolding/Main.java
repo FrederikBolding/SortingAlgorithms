@@ -12,6 +12,7 @@ public class Main {
         RunAlgorithm(new MergeSort(400));
         RunAlgorithm(new HeapSort(400));
         RunAlgorithm(new CountingSort(400));
+        RunAlgorithm(new RadixSort(400));
         RunAlgorithm(new BogoSort(8));
     }
 
