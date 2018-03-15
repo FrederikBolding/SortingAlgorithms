@@ -37,7 +37,7 @@ public class RadixSort extends BaseAlgorithm {
         Main.visualization.Visualize(B);
         return B;
     }
-    
+
     private int getIndex(int[] A, int i, int exp) {
         return (A[i] / exp) % 10;
     }
